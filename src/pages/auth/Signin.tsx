@@ -26,8 +26,8 @@ const Signin = () => {
         setLoading(false)
         const { email, password } = data
         signinApi({ email, password }).then((res) => {
-            dispatch(mainUser(res))
             navigate("/auth")
+            dispatch(mainUser(res))
             return res
         })
 

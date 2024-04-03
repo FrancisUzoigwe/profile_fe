@@ -5,6 +5,7 @@ import Register from "../pages/auth/Register";
 import MainLayout from "../layout/MainLayout";
 import Dashboard from "../pages/home/Dashboard";
 import PrivateRoute from "./PrivateRoute";
+import Settings from "../pages/home/Settings";
 
 
 
@@ -30,6 +31,10 @@ export const mainRouter = createBrowserRouter([
             {
                 index: true,
                 element: <Dashboard />
+            },
+            {
+                path: "/auth/settings",
+                element: <Settings />
             }
         ]
     }
