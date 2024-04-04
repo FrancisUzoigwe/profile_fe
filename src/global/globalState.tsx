@@ -8,7 +8,7 @@ const globalState = createSlice({
     name: "state",
     initialState,
     reducers: {
-        mainUser: (state: any, { payload }) => {
+        mainUser: (state: any, { payload }: any) => {
             state.user = payload
         },
         logOut: (state: any) => {

@@ -7,7 +7,7 @@ const url: string = "https://profile-practice.onrender.com"
 
 export const spinUpApi = async () => {
     try {
-        return await axios.get(url).then((res) => {
+        return await axios.get(url).then((res: any) => {
             return res.data
         })
     } catch (error: any) {
@@ -18,7 +18,7 @@ export const spinUpApi = async () => {
 
 export const registerApi = async (data: any) => {
     try {
-        return await axios.post(`${url}/api/v1/register`, data).then((res) => {
+        return await axios.post(`${url}/api/v1/register`, data).then((res: any) => {
             Swal.fire({
                 titleText: "Account Successfully Created",
                 icon: "success",
@@ -42,7 +42,7 @@ export const registerApi = async (data: any) => {
 
 export const signinApi = async (data: any) => {
     try {
-        return await axios.post(`${url}/api/v1/login`, data).then((res) => {
+        return await axios.post(`${url}/api/v1/login`, data).then((res: any) => {
             return res.data.data
         })
     } catch (error: any) {
@@ -59,7 +59,7 @@ export const signinApi = async (data: any) => {
 
 export const getAllAccount = async () => {
     try {
-        return await axios.get(`${url}/api/v1/get-all-details`).then((res) => {
+        return await axios.get(`${url}/api/v1/get-all-details`).then((res: any) => {
             return res.data.data
         })
     } catch (error: any) {
