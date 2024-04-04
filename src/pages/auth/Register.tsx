@@ -64,7 +64,7 @@ const Register = () => {
                                 <div className='flex items-center text-[13px] font-bold '>Have an account?  <Link to="/"><button className="ml-2 border border-[#40196D] outline-none py-2 px-4 rounded-3xl hover:text-white hover:bg-[#40196D] transition duration-300 ">Sign In</button></Link></div>
                             </div>
                             <div className="mt-16 text-[40px] font-black text-center">Create An Account</div>
-                            <div className=" text-gray-400 text-[13px]">Create your AJMoney account.</div>
+                            <div className=" text-gray-400 text-[13px]">Create your ProfilePractice account.</div>
                             <div className="w-[80%] mt-4">
                                 <div className="w-full h-[45px] ">
                                     <label

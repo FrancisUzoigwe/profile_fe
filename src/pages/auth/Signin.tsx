@@ -73,7 +73,7 @@ const Signin = () => {
                                 <div className='flex items-center text-[13px] font-bold '>Are you new?  <Link to="/register"><button className="ml-2 border border-[#40196D] outline-none py-2 px-4 rounded-3xl hover:text-white hover:bg-[#40196D] transition duration-300 " >Register</button></Link></div>
                             </div>
                             <div className="mt-16 text-[40px] font-black text-center">Welcome Back</div>
-                            <div className=" text-gray-400 text-[13px]">Sign in to your AJMoney account.</div>
+                            <div className=" text-gray-400 text-[13px]">Sign in to your  ProfilePractice account.</div>
                             <div className="w-[80%] mt-4">
                                 <div className="w-full h-[45px] ">
                                     <label
