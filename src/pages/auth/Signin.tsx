@@ -1,11 +1,11 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import LoadingPage from "../../common/reuse/LoadingPage"
 import student from "../../assets/man.jpg"
 import * as yup from "yup"
 import { useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 import { Link, useNavigate } from "react-router-dom"
-import { signinApi } from "../../apis/authenticationApi"
+import { signinApi, spinUpApi } from "../../apis/authenticationApi"
 import { useDispatch } from "react-redux"
 import { mainUser } from "../../global/globalState"
 
@@ -39,7 +39,6 @@ const Signin = () => {
     }
 
     const [inputsFilled, setInputsFilled] = useState<boolean>(false)
-
     const handleInputChange = () => {
         const emailInput = document.getElementById('UserEmail') as HTMLInputElement;
         const passwordInput = document.getElementById('UserPassword') as HTMLInputElement;
@@ -51,26 +50,31 @@ const Signin = () => {
         }
     }
 
-
-
     const onPaste = (e: any) => {
         e.preventDefault()
     }
+
+
+    useEffect(() => {
+        spinUpApi().then(() => {
+            console.log("Connection established")
+        })
+    }, [])
 
     return (
         <>
             {loading && <LoadingPage />}
             <div className='w-full min-h-[100vh] flex justify-center items-center bg-[#40196D]'>
-                <div className='w-[90%] items-center flex justify-center h-[500px] rounded-xl bg-white text-black'>
+                <div className='w-[90%] items-center flex justify-center h-[480px] rounded-xl bg-white text-black'>
                     <div className='w-[90%] flex items-center justify-between h-full'>
                         <form onSubmit={onHandleSubmit} className='w-[45%]  max-md:w-full h-full flex flex-col items-center rounded-md' >
                             <div className='flex justify-between items-center w-full my-2'>
                                 <div className="font-bold">ProfilePractice</div>
-                                <div className='flex items-center text-[13px] font-bold '>Are you new?  <Link to="/register"><button className="ml-2 border border-[#40196D] outline-none py-2 px-4 rounded-3xl hover:text-white hover:bg-[#40196D] transition duration-300 " >Create Account</button></Link></div>
+                                <div className='flex items-center text-[13px] font-bold '>Are you new?  <Link to="/register"><button className="ml-2 border border-[#40196D] outline-none py-2 px-4 rounded-3xl hover:text-white hover:bg-[#40196D] transition duration-300 " >Register</button></Link></div>
                             </div>
                             <div className="mt-16 text-[40px] font-black text-center">Welcome Back</div>
                             <div className=" text-gray-400 text-[13px]">Sign in to your AJMoney account.</div>
-                            <div className="w-[70%] mt-4">
+                            <div className="w-[80%] mt-4">
                                 <div className="w-full h-[45px] ">
                                     <label
                                         htmlFor="UserEmail"
@@ -95,7 +99,7 @@ const Signin = () => {
                                     </label>
                                 </div>
                             </div>
-                            <div className="w-[70%] mt-6">
+                            <div className="w-[80%] mt-6">
                                 <div className="w-full h-[45px] ">
                                     <label
                                         htmlFor="UserPassword"
@@ -124,7 +128,7 @@ const Signin = () => {
                                 </div>
                             </div>
 
-                            <button className={`w-[70%]  my-4 rounded-3xl h-[45px] transition duration-300  ${inputsFilled ? "bg-[#40196D] text-white" : "text-gray-500 bg-gray-300"}`} type="submit" disabled={!inputsFilled}>Login</button>
+                            <button className={`w-[80%]  my-4 rounded-3xl h-[45px] transition duration-300  ${inputsFilled ? "bg-[#40196D] text-white" : "text-gray-500 bg-gray-300"}`} type="submit" disabled={!inputsFilled}>Login</button>
                             <div className="w-full flex items-center justify-center h-[20px] text-[14px] my-2 hover:cursor-pointer">
                                 Forgot Passcode? <div className="ml-2 ">Reset</div>
                             </div>

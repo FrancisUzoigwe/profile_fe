@@ -2,7 +2,18 @@
 import axios from "axios"
 import Swal from "sweetalert2"
 
-const url: string = "http://localhost:2345"
+// const url: string = "http://localhost:2345"
+const url: string = "https://profile-practice.onrender.com"
+
+export const spinUpApi = async () => {
+    try {
+        return await axios.get(url).then((res) => {
+            return res.data
+        })
+    } catch (error: any) {
+        throw new Error(error?.message)
+    }
+}
 
 
 export const registerApi = async (data: any) => {
@@ -53,5 +64,18 @@ export const getAllAccount = async () => {
         })
     } catch (error: any) {
         console.log(error.message)
+    }
+}
+
+export const updateAccountImage = async (userID: any, data: any) => {
+    try {
+        const config: any = {
+            "content-type": "multipart/form-data"
+        }
+        return await axios.patch(`${url}/api/v1/${userID}/update-details`, data, config).then((res: any) => {
+            return res.data.data
+        })
+    } catch (error: any) {
+        throw new Error(error.message)
     }
 }

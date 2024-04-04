@@ -56,7 +56,7 @@ const Register = () => {
         <>
             {loading && <LoadingPage />}
             <div className='w-full min-h-[100vh] flex justify-center items-center bg-[#40196D]'>
-                <div className='w-[90%] items-center flex justify-center h-[520px] rounded-xl bg-white text-black'>
+                <div className='w-[90%] items-center flex justify-center h-[500px] rounded-xl bg-white text-black'>
                     <div className='w-[90%] flex items-center justify-between h-full'>
                         <form onSubmit={onHandleSubmit} className='w-[45%]  max-md:w-full h-full flex flex-col items-center rounded-md' >
                             <div className='flex justify-between items-center w-full my-2'>
@@ -65,7 +65,7 @@ const Register = () => {
                             </div>
                             <div className="mt-16 text-[40px] font-black text-center">Create An Account</div>
                             <div className=" text-gray-400 text-[13px]">Create your AJMoney account.</div>
-                            <div className="w-[70%] mt-4">
+                            <div className="w-[80%] mt-4">
                                 <div className="w-full h-[45px] ">
                                     <label
                                         htmlFor="UserEmail"
@@ -89,7 +89,7 @@ const Register = () => {
                                     </label>
                                 </div>
                             </div>
-                            <div className="w-[70%] mt-4">
+                            <div className="w-[80%] mt-4">
                                 <div className="w-full h-[45px] ">
                                     <label
                                         htmlFor="UserName"
@@ -113,7 +113,7 @@ const Register = () => {
                                     </label>
                                 </div>
                             </div>
-                            <div className="w-[70%] mt-4">
+                            <div className="w-[80%] mt-4">
                                 <div className="w-full h-[45px] ">
                                     <label
                                         htmlFor="UserPassword"
@@ -138,7 +138,7 @@ const Register = () => {
                                     </label>
                                 </div>
                             </div>
-                            <button className={`w-[70%] my-4 rounded-3xl h-[45px] transition duration-300  ${inputsFilled ? "bg-[#40196D] text-white" : "text-gray-500 bg-gray-300"}`} type="submit" disabled={!inputsFilled}>Sign In</button>
+                            <button className={`w-[80%] my-4 rounded-3xl h-[45px] transition duration-300  ${inputsFilled ? "bg-[#40196D] text-white" : "text-gray-500 bg-gray-300"}`} type="submit" disabled={!inputsFilled}>Sign In</button>
                             <div className="w-full flex items-center justify-center h-[20px] text-[14px] my-2 hover:cursor-pointer">
                                 Forgot Passcode? <div className="ml-2 ">Reset</div>
                             </div>

@@ -40,7 +40,7 @@ const DashBoard = () => {
         throw error
       }
     }
-    const { data } = useSWR(`http://localhost:2345/api/v1/${auth._id}/get-details`, fetcher)
+    const { data } = useSWR(`https://profile-practice.onrender.com/api/v1/${auth._id}/get-details`, fetcher)
     return (
         <>
             <motion.div variants={motionVariant} initial="close" animate="open" className="w-full min-h-[100vh] flex justify-center">

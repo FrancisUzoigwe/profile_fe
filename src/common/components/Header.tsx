@@ -19,7 +19,7 @@ const Header = () => {
       throw error
     }
   }
-  const { data }: any = useSWR(`http://localhost:2345/api/v1/${auth._id}/get-details`, fetcher)
+  const { data }: any = useSWR(`https://profile-practice.onrender.com/api/v1/${auth._id}/get-details`, fetcher)
 
 
   const [image, setImage] = useState<string>(vite)
@@ -65,9 +65,9 @@ const Header = () => {
                 <img src={data?.image ? data.image : image} onChange={onHandleImage} className="w-[45px] h-[45px] rounded-full border  object-cover" />
                 <div className="ml-2 max-md:hidden">{data?.email}</div>
                 <div className="ml-2 hover:cursor-pointer "><FaCaretDown /></div>
-                {drop ? <motion.div initial={{ y: "100px", opacity: 0 }} animate={{ opacity: 1, y: 0 }} className="absolute right-0 bg-gray-300 flex flex-col items-center w-full top-10 shadow-md rounded-md ">
+                {drop ? <motion.div initial={{ y: "100px", opacity: 0 }} animate={{ opacity: 1, y: 0 }} className="absolute right-0 bg-gray-300 flex flex-col items-center max-md:w-[200px] w-full top-10 shadow-md rounded-md ">
                   <div className="py-2 md:flex  text-white ">Account Details</div>
-                  <img src={data?.image ? data.image : image} alt="Image" className="w-[50px] h-[50px] rounded-full border" />
+                  <img src={data?.image ? data.image : image} alt="Image" className="w-[50px] object-cover object-top h-[50px] rounded-full border" />
                   <div className="pb-3 pt-1 text-[red] " onClick={() => {
                     dispatch(logOut())
                   }}>Logout</div>
